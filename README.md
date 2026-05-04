@@ -1,7 +1,7 @@
 # Bangladesh Textile Export Analytics Dashboard
 
 ![Executive Summary Dashboard](powerbi/screenshots/01_executive_summary.png)
-*(Note: Replace the link above with the actual path to your dashboard screenshot!)*
+
 
 ## Overview
 Power BI and SQL dashboard analyzing **$53.4M in Bangladesh textile export data** (2023–2024) across 45 global buyers, 12 fabric types, and 8 regions. Built as a portfolio project during my transition from 8 years of professional experience in export-oriented fabric marketing into a dedicated data analytics role.
@@ -26,10 +26,10 @@ Power BI and SQL dashboard analyzing **$53.4M in Bangladesh textile export data*
 |------|---------|-------------|
 | **Executive Summary** | Business performance overview | Revenue trend, YoY growth, regional breakdown |
 | **Product Analysis** | Fabric performance & seasonality | 60-day rolling revenue, quarterly matrix, fabric ranking |
+![Product Analysis](powerbi/screenshots/02_product_analysis.png)
 | **Buyer Insights** | Customer segmentation & behavior | Top 10 buyers, country revenue, tier distribution |
+![Buyer Insight](powerbi/screenshots/03_buyer_insights.png)
 | **Methodology** | Technical documentation | SQL queries, data model, DAX measures |
-
-*(Optional: Add another screenshot of your Matrix or Marketing KPI dashboard here)*
 
 ---
 
