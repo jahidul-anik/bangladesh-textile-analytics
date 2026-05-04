@@ -148,3 +148,56 @@ Buyer Insight
         GROUP BY Channel
         ORDER BY Total_Conversions DESC;
 ```
+---
+
+## DAX Measures
+
+| Measure | Purpose | Formula |
+|---------|---------|---------|
+| **Total Revenue** | Core KPI | `SUM(orders[Total_Value_USD])` |
+| **Revenue YTD** | Year-to-date tracking | `TOTALYTD([Total Revenue], DateTable[Date])` |
+| **Revenue Last Year** | YoY comparison base | `CALCULATE([Total Revenue], SAMEPERIODLASTYEAR(DateTable[Date]))` |
+| **YoY Growth %** | Growth rate | `DIVIDE([Total Revenue] - [Revenue Last Year], [Revenue Last Year], 0)` |
+| **60-Day Rolling Revenue** | Smooth short-term noise | `CALCULATE([Total Revenue], DATESINPERIOD(DateTable[Date], MAX(DateTable[Date]), -60, DAY))` |
+| **Active Buyers** | Customer count | `DISTINCTCOUNT(orders[Buyer_ID])` |
+
+---
+
+## Dataset
+
+Synthetic data modeling real Bangladesh RMG industry patterns:
+
+| Metric | Value |
+|--------|-------|
+| **Total Orders** | 1,892 |
+| **Total Revenue** | $53.4M |
+| **Buyers** | 45 across 8 regions |
+| **Fabric Types** | 12 (cotton, polyester, blends, knits) |
+| **Date Range** | January 2023 – December 2024 |
+| **Campaigns** | 20 across 6 channels |
+| **Inventory Records** | 288 monthly snapshots |
+
+---
+
+## Methodology Pages
+
+Technical documentation showing SQL queries, data model diagrams, and DAX validation logic:
+
+![Methodology Page 1](powerbi/screenshots/04_methodology_page1.png)
+![Methodology Page 2](powerbi/screenshots/05_methodology_page2.png)
+![Methodology Page 3](powerbi/screenshots/06_methodology_page3.png)
+
+---
+
+## About Me
+
+8 years in Bangladesh fabric marketing, now transitioning to data analytics. Self-taught SQL and Power BI while working full-time. This project demonstrates my ability to combine **domain expertise** (textile supply chains, B2B buyer behavior) with **technical skills** (SQL, DAX, data modeling).
+
+**Seeking:** Remote data analyst roles in textile, e-commerce, fashion, or B2B sectors.
+
+**Contact:** [LinkedIn](your-linkedin-url) | [Email](your-email)
+
+---
+
+## License
+This project is for portfolio demonstration. Dataset is synthetic.
