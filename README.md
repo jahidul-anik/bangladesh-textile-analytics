@@ -30,13 +30,13 @@ premium pricing.
 ---
 
 ## SQL Highlights
--- ============================================
--- Query 1: Monthly Revenue Trend
--- Purpose: Track revenue performance over time
--- Tables: orders
--- Author: [Jahidul-Anik]
--- Date: 2026-04-30
--- ============================================
+
+Query 1: Monthly Revenue Trend
+Purpose: Track revenue performance over time
+Tables: orders
+Author: [Jahidul-Anik]
+Date: 2026-04-30
+============================================
 SELECT
 	Year,
     Month,
@@ -49,13 +49,13 @@ Where Order_Status in ('Completed', 'Shipped')
 Group By Year,Month
 order by Year,Month;
 
--- ============================================
--- Query 2: Top Performers with Window Function (Rank)
--- Purpose: Calculate both the rank and the market share (percentage of total) for each fabric type
--- Tables: orders
--- Author: [Jahidul-Anik]
--- Date: 2026-04-30
--- ============================================
+
+Query 2: Top Performers with Window Function (Rank)
+Purpose: Calculate both the rank and the market share (percentage of total) for each fabric type
+Tables: orders
+Author: [Jahidul-Anik]
+Date: 2026-04-30
+
 select
 	Fabric_Type,
     rank() over( order by sum(total_value_usd) desc) as Revenue_Rank,
@@ -67,13 +67,12 @@ Where Order_Status IN ('completed','shipped')
 group by Fabric_Type
 order by revenue_rank ASC;
 
--- ============================================
--- Query 2: Buyer RFM Segmentation
--- Purpose: raw transactional data, transformed it into behavioral metrics, graded those metrics on a curve, and assigned plain-English marketing labels
--- Tables: buyers & orders
--- Author: [Jahidul-Anik]
--- Date: 2026-05-02
--- ============================================
+Query 2: Buyer RFM Segmentation
+Purpose: raw transactional data, transformed it into behavioral metrics, graded those metrics on a curve, and assigned plain-English marketing labels
+Tables: buyers & orders
+Author: [Jahidul-Anik]
+Date: 2026-05-02
+
 	With 
 		Buyer_matrics as (
 			select 
@@ -111,13 +110,12 @@ order by revenue_rank ASC;
 From scored
 order by Total_revenue desc;
 
--- ============================================
--- Query 4: Running Total with Window Function
--- Purpose: A Running Total (cumulative revenue) and a Rolling Average (moving average), tracked independently for each type of fabric
--- Tables: orders
--- Author: [Jahidul-Anik]
--- Date: 2026-05-03
--- ============================================
+Query 4: Running Total with Window Function
+Purpose: A Running Total (cumulative revenue) and a Rolling Average (moving average), tracked independently for each type of fabric
+Tables: orders
+Author: [Jahidul-Anik]
+Date: 2026-05-03
+
 SELECT 
     Order_Date,
     Fabric_Type,
@@ -136,13 +134,13 @@ FROM orders
 WHERE Order_Status IN ('Completed', 'Shipped')
 ORDER BY Fabric_Type, Order_Date;
 
--- ============================================
--- Query 5: Marketing Channel ROI
--- Purpose: Takes raw marketing data and calculates exactly how efficiently your money is being spent across different channels
--- Tables: orders
--- Author: [Jahidul-Anik]
--- Date: 2026-05-03
--- ============================================
+============================================
+Query 5: Marketing Channel ROI
+Purpose: Takes raw marketing data and calculates exactly how efficiently your money is being spent across different channels
+Tables: orders
+Author: [Jahidul-Anik]
+Date: 2026-05-03
+
 SELECT 
 Channel,
 sum(Spend_USD) as total_spend,
@@ -154,8 +152,5 @@ round(sum(spend_usd)/ nullif(sum(conversions),0),2) as Cost_per_conversions
 FROM textile_analytics.campaigns
 group by channel
 order by total_conversion desc;
-
-
-Where Order_Status in ('Completed', 'Shipped')
 Group By Year,Month
 order by Year,Month;
