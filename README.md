@@ -113,7 +113,7 @@ Buyer Insight
 ### Query 4: Running Totals & Moving Averages
 **Purpose:** Calculate a cumulative running total and a rolling 7-order average, partitioned independently for each fabric type.
 
-        ```SQL
+```SQL
         SELECT 
             Order_Date,
             Fabric_Type,
