@@ -1,6 +1,6 @@
 # Bangladesh Textile Export Analytics Dashboard
 
-![Executive Summary Dashboard](docs/executive_summary_screenshot.png) 
+![Executive Summary Dashboard](powerbi/screenshorts/01_executive_summary.png)
 *(Note: Replace the link above with the actual path to your dashboard screenshot!)*
 
 ## Overview
