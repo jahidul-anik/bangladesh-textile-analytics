@@ -30,8 +30,10 @@ Power BI and SQL dashboard analyzing **$53.4M in Bangladesh textile export data*
 | **Methodology** | Technical documentation | SQL queries, data model, DAX measures |
 
 ---
-| ![Product Analysis](powerbi/screenshots/02_product_analysis.png) |
-| ![Buyer Insight](powerbi/screenshots/03_buyer_insights.png) |
+Product Analysis Pages
+![Product Analysis](powerbi/screenshots/02_product_analysis.png)
+Buyer Insight
+![Buyer Insight](powerbi/screenshots/03_buyer_insights.png)
 
 ## SQL Highlights
 
