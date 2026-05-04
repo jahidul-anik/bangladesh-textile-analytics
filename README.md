@@ -113,24 +113,24 @@ Buyer Insight
 ### Query 4: Running Totals & Moving Averages
 **Purpose:** Calculate a cumulative running total and a rolling 7-order average, partitioned independently for each fabric type.
 
-```SQL
-SELECT 
-    Order_Date,
-    Fabric_Type,
-    Total_Value_USD,
-    SUM(Total_Value_USD) OVER (
-        PARTITION BY Fabric_Type 
-        ORDER BY Order_Date 
-        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
-    ) AS Running_Revenue,
-    AVG(Total_Value_USD) OVER (
-        PARTITION BY Fabric_Type 
-        ORDER BY Order_Date 
-        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
-    ) AS Rolling_7Order_Avg
-FROM orders
-WHERE Order_Status IN ('Completed', 'Shipped')
-ORDER BY Fabric_Type, Order_Date;
+        ```SQL
+        SELECT 
+            Order_Date,
+            Fabric_Type,
+            Total_Value_USD,
+            SUM(Total_Value_USD) OVER (
+                PARTITION BY Fabric_Type 
+                ORDER BY Order_Date 
+                ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+            ) AS Running_Revenue,
+            AVG(Total_Value_USD) OVER (
+                PARTITION BY Fabric_Type 
+                ORDER BY Order_Date 
+                ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+            ) AS Rolling_7Order_Avg
+        FROM orders
+        WHERE Order_Status IN ('Completed', 'Shipped')
+        ORDER BY Fabric_Type, Order_Date;
 ```
 ### Query 5: Marketing Channel ROI
 **Purpose:** Evaluate marketing efficiency by calculating KPIs like Conversion Rate, Cost Per Lead, and Customer Acquisition Cost (CAC).
