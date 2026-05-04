@@ -56,7 +56,6 @@ Buyer Insight
 
 ### Query 2: Top Performers (Window Functions)
 **Purpose:** Calculate both the rank and the market share (percentage of total) for each fabric type in a single pass.
-## SQL Highlights
 
 ```SQL
         SELECT
@@ -72,7 +71,6 @@ Buyer Insight
 ```
 ### Query 3: Buyer RFM Segmentation (CTEs & CASE)
 **Purpose:** Transform raw transactional data into behavioral metrics (Recency, Frequency, Monetary), grade them on a quartile curve, and assign marketing segments.
-## SQL Highlights
 
 ```SQL
         WITH Buyer_Metrics AS (
@@ -114,7 +112,6 @@ Buyer Insight
 
 ### Query 4: Running Totals & Moving Averages
 **Purpose:** Calculate a cumulative running total and a rolling 7-order average, partitioned independently for each fabric type.
-## SQL Highlights
 
 ```SQL
 SELECT 
@@ -135,7 +132,7 @@ FROM orders
 WHERE Order_Status IN ('Completed', 'Shipped')
 ORDER BY Fabric_Type, Order_Date;
 ```
-### Query 5: Query 5: Marketing Channel ROI
+### Query 5: Marketing Channel ROI
 **Purpose:** Evaluate marketing efficiency by calculating KPIs like Conversion Rate, Cost Per Lead, and Customer Acquisition Cost (CAC).
 
 ```SQL
