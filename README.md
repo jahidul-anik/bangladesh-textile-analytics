@@ -195,7 +195,7 @@ Technical documentation showing SQL queries, data model diagrams, and DAX valida
 
 **Seeking:** Remote data analyst roles in textile, e-commerce, fashion, or B2B sectors.
 
-**Contact:** [LinkedIn](your-linkedin-url) | [Email](your-email)
+**Contact:** [LinkedIn](www.linkedin.com/in/jahidul-anik) | [Email](jahidul-anik@outlook.com)
 
 ---
 
