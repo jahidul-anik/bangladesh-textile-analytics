@@ -10,7 +10,6 @@ Star schema with `orders` as fact table:
 ## SQL Architecture
 
 ### Window Functions Used
-- `LAG()` — Year-over-year comparison
 - `RANK()` — Fabric performance ranking
 - `NTILE(4)` — RFM quartile scoring
 - `SUM() OVER (PARTITION BY... ROWS BETWEEN...)` — Running totals
